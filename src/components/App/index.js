@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Home from '../Home';
-import LoginPage from '../../containers/LoginPage';
+import Login from '../Login/index';
 import Header from '../Header';
 import { Footer } from '../Footer';
 import SignUpPageConnected from '../../containers/SignUpPage';
@@ -14,10 +14,12 @@ const App = () => (
   <BrowserRouter>
     <div>
       <Header />
-      <Route exact path="/" component={Home} />
-      <Route path="/login" component={LoginPage} />
-      <Route path="/signup" component={SignUpPageConnected} />
-      <Footer />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUpPageConnected} />
+        <Footer />
+      </Switch>
     </div>
   </BrowserRouter>
 );

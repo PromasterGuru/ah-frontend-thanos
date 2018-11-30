@@ -71,7 +71,14 @@ exports[`<Login /> renders the component 1`] = `
             Or Sign In with Social Media:
              
           </small>
-          <SocialMediaLinks />
+          <div
+            className="icons-group text-center"
+          >
+            <Connect(SocialLogin)
+              onChange={Object {}}
+              onSubmit={Object {}}
+            />
+          </div>
         </div>
       </div>
       <LoginSignupRedirect

@@ -5,6 +5,8 @@ exports[`<SignUpPage /> should render the component 1`] = `
   freshUser={
     Object {
       "email": "",
+      "isLoggedIn": false,
+      "loading": true,
       "password": "",
       "username": "",
     }

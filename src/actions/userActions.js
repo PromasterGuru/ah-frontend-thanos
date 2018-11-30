@@ -2,6 +2,8 @@ import axios from 'axios';
 import swal from 'sweetalert2';
 import actionTypes from './actionTypes';
 import swalMessages from './swalAlerts';
+import { SocialLogin, LogIn, socialLoginFailure } from './actionCreators';
+import axiosInstance from '../commons/axiosInstance';
 
 export const signupSuccessful = response => ({
   type: actionTypes.USER_REGISTER_SUCCESS,
@@ -37,3 +39,21 @@ export const userSignup = freshUser => (dispatch) => {
       swal({ ...swalMessages.REGISTRATION_ERROR, text: message });
     });
 };
+
+
+export const socialUserLogin = (url, token) => (dispatch) => {
+  dispatch(SocialLogin(true));
+  return axiosInstance.post(`${url}/${token}`)
+    .then((response) => {
+      dispatch(LogIn(true));
+      localStorage.setItem('token', response.data.results.token);
+      // setTimeout(() => window.location.replace('/'), 3000);
+    })
+    .catch((error) => {
+      dispatch(socialLoginFailure({
+        results: error.response.data.results,
+        status_code: error.response.status,
+      }));
+    });
+};
+export default socialUserLogin;

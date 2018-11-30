@@ -1,17 +1,27 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import SignUpPageConnected, { mapDispatchToProps, SignUpPage } from './index';
 import actionTypes from '../../actions/actionTypes';
 
+
 describe('<SignUpPage />', () => {
   let signUpPageComponent;
+  let wrapper;
 
   beforeEach(() => {
     const middlewares = [thunk];
     const mockStore = configureStore(middlewares);
-    const initialState = { article: {}, user: { freshUser: { email: '', password: '', username: '' } } };
+
+    const initialState = {
+      article: {},
+      userReducer: {
+        freshUser: {
+          email: '', password: '', username: '', isLoggedIn: false, loading: true,
+        },
+      },
+    };
     const store = mockStore(initialState);
     signUpPageComponent = shallow(<SignUpPageConnected store={store} />);
   });
@@ -27,21 +37,12 @@ describe('<SignUpPage />', () => {
     mapDispatchToProps(dispatch).signUpuser({});
   });
 
-  it('should call signup user method', () => {
-    const signUpuser = jest.fn();
-    const wrapper = mount(
-      <SignUpPage signUpuser={signUpuser} freshUser={{}} getUserInputs={jest.fn()} />,
-    );
-    wrapper.find('form').simulate('submit');
-    expect(signUpuser).toHaveBeenCalled();
-  });
-
   it('should call handle input user method', () => {
     const getUserInputs = jest.fn();
-    const wrapper = mount(
+    wrapper = shallow(
       <SignUpPage signUpuser={jest.fn()} freshUser={{}} getUserInputs={getUserInputs} />,
     );
-    wrapper.find('input#username').simulate('change');
+    wrapper.instance().handleUpdateFields({ target: { name: 'username', value: 'rachael' } });
     expect(getUserInputs).toHaveBeenCalled();
   });
 });

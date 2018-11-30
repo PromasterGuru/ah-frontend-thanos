@@ -3,8 +3,8 @@ import * as PropTypes from 'prop-types';
 import './Login.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import SocialMediaLinks from '../SocialMediaLinks';
 import LoginSignupRedirect from '../LoginSignupRedirect';
+import SocialLogin from './socialLogin';
 
 library.add(fab);
 
@@ -58,7 +58,9 @@ const Login = ({ onChange, onSubmit }) => {
                 Or Sign In with Social Media:
                 {' '}
               </small>
-              <SocialMediaLinks />
+              <div className="icons-group text-center">
+                <SocialLogin />
+              </div>
             </div>
           </div>
           <LoginSignupRedirect message="Not yet a member? " link="signup" linkName="Sign Up" />
@@ -72,6 +74,10 @@ const Login = ({ onChange, onSubmit }) => {
 Login.propTypes = {
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+};
+SocialLogin.defaultProps = {
+  onChange: {},
+  onSubmit: {},
 };
 
 export default Login;
