@@ -46,6 +46,7 @@
     "eslint-plugin-react": "^7.11.1"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
     "@fortawesome/free-brands-svg-icons": "^5.5.0",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
@@ -80,7 +81,7 @@
     "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
     "serve": "^10.1.1",
-    "sweetalert2": "^7.29.2",
+    "sweetalert2": "^7.30.0",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
@@ -99,10 +100,12 @@
       "!src/index.js"
     ],
     "preset": "jest-puppeteer",
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less|scss)$": "identity-obj-proxy"
-    }
-  }
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+    "\\.(css|less|scss)$": "identity-obj-proxy"
+  },
+  "modulePaths": [
+    "<rootDir>/src"
+  ]
+}
 }

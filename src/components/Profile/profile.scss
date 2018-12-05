@@ -1,0 +1,53 @@
+.about{
+  margin: 4em 0;
+  padding: 1em;
+  position: relative;
+ }
+ .about h1{
+  color:#F97300;
+  margin: 2em;
+ }
+ .img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0%
+ }
+ .about span{
+  display: block;
+  color: #888;
+  position: absolute;
+  left: 115px;
+ }
+ .about .desc{
+  padding: 2em;
+  border-left:4px solid #10828C;
+ }
+ .about .desc h3{
+  color: #10828C;
+ }
+ .about .desc p{
+  line-height:2;
+  color:#888;
+ }
+ 
+ .button{
+  color: turquoise !important;
+  border-color: turquoise !important;
+ }
+ .button:hover{
+   background-color: turquoise !important;
+   color: white !important;
+ }
+ .form-control{
+  background-color: turquoise;
+  color:blue;
+}
+.title{
+ color: turquoise; 
+}
+// .container{
+//   background-color: turquoise;
+// }
+.viewProfiletitle {
+  color:black !important;
+}
