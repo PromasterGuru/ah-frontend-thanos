@@ -1,0 +1,47 @@
+.articles-body {
+  display: flex;
+  flex-flow: row wrap;
+
+  padding: 30px;
+
+  .article-card {
+    min-width: 250px;
+    max-width: 25%;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .image-wrapper {
+    max-width: 100%;
+    max-height: 200px;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 20px;
+
+    img {
+      display: block;
+      margin: 0 -30%;
+      width: 177.777%;
+    }
+  }
+  .text-section {
+    max-width: 90%;
+    margin-top: -50px;
+    z-index: 2;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 2px 10px #efefef;
+
+    .title-section {
+    }
+    .body-section {
+    }
+    .date-section {
+    }
+    .read-more {
+    }
+  }
+}
