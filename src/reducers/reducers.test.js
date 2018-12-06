@@ -7,6 +7,7 @@ describe('post reducer', () => {
   it('should return the initial state', () => {
     expect(combinedReducers(undefined, {})).toEqual({
       article: {},
+      comments: {},
       loginReducer: { errorMessage: '', successMessage: '', user_details: '' },
       user: { freshUser: { email: '', password: '', username: '' } },
     });

@@ -17,6 +17,10 @@ exports[`Provider and App renders <App/> correctly 1`] = `
       component={[Function]}
       path="/signup"
     />
+    <Route
+      component={[Function]}
+      path="/comments"
+    />
     <Footer />
   </div>
 </BrowserRouter>

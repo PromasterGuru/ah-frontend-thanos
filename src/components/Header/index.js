@@ -27,6 +27,7 @@ const Header = () => (
           <UrlLink link="/ARTICLES" linkName="ARTICLES" />
           <UrlLink link="/ABOUT" linkName="ABOUT" />
           <UrlLink link="/CONTACT" linkName="CONTACT" />
+          <UrlLink link="comments" linkName="Comments" />
         </ul>
         <div>
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 nav-2">
