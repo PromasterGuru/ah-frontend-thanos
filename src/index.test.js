@@ -11,11 +11,11 @@ describe('Provider and App', () => {
   let app;
   let provider;
   let store;
+  const middlewares = [thunk];
+  const mockStore = configureStore(middlewares);
+  const initialState = { article: {}, user: {} };
 
   beforeEach(() => {
-    const middlewares = [thunk];
-    const mockStore = configureStore(middlewares);
-    const initialState = { article: {}, user: {} };
     store = mockStore(initialState);
     provider = shallow(<Provider store={store}><App /></Provider>);
     app = shallow(<App />);

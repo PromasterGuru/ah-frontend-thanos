@@ -7,12 +7,12 @@ import actionTypes from '../../actions/actionTypes';
 
 describe('<SignUpPage />', () => {
   let signUpPageComponent;
+  const middlewares = [thunk];
+  const mockStore = configureStore(middlewares);
+  const initialState = { article: {}, user: { freshUser: { email: '', password: '', username: '' } } };
+  const store = mockStore(initialState);
 
   beforeEach(() => {
-    const middlewares = [thunk];
-    const mockStore = configureStore(middlewares);
-    const initialState = { article: {}, user: { freshUser: { email: '', password: '', username: '' } } };
-    const store = mockStore(initialState);
     signUpPageComponent = shallow(<SignUpPageConnected store={store} />);
   });
 

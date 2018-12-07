@@ -4,19 +4,25 @@ exports[`Provider and App renders <App/> correctly 1`] = `
 <BrowserRouter>
   <div>
     <Header />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/"
-    />
-    <Route
-      component={[Function]}
-      path="/login"
-    />
-    <Route
-      component={[Function]}
-      path="/signup"
-    />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+        path="/signup"
+      />
+      <Route
+        component={[Function]}
+        path="/rating"
+      />
+    </Switch>
     <Footer />
   </div>
 </BrowserRouter>

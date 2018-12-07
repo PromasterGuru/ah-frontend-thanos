@@ -1,14 +1,14 @@
 import expect from 'expect';
 import combinedReducers from './index';
 import user from './userReducer';
-import article from './articleReducer';
+import ratingReducer from './ratingReducer/ratingReducer';
 
 describe('post reducer', () => {
   it('should return the initial state', () => {
     expect(combinedReducers(undefined, {})).toEqual({
-      article: {},
       loginReducer: { errorMessage: '', successMessage: '', user_details: '' },
       user: { freshUser: { email: '', password: '', username: '' } },
+      ratingReducer: {},
     });
   });
 
@@ -17,8 +17,7 @@ describe('post reducer', () => {
       freshUser: { email: '', password: '', username: '' },
     });
   });
-
-  it('should return the initial state for articles reducer', () => {
-    expect(article(undefined, {})).toEqual({});
+  it('should return the initial state for user reducer', () => {
+    expect(ratingReducer(undefined, {})).toEqual({});
   });
 });

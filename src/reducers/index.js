@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import user from './userReducer';
-import article from './articleReducer';
 import loginReducer from './loginReducer/loginReducer';
+import ratingReducer from './ratingReducer/ratingReducer';
 
 const reducer = combineReducers({
   loginReducer,
   user,
-  article,
+  ratingReducer,
 });
 
 export default reducer;

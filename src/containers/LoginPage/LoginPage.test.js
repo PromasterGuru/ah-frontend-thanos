@@ -7,26 +7,25 @@ import { MemoryRouter } from 'react-router-dom';
 import Login from '../../components/Login';
 import LoginPage from './index';
 
-const mockStore = configureMockStore([thunk]);
 let store;
-
-const props = {
-  signUp: jest.fn(),
-  signupData: {
-    errors: {
-      password: ['Wrong password'],
-    },
-  },
-};
-
+const mockStore = configureMockStore([thunk]);
+const LoginComponent = shallow(<Login onChange={jest.fn()} onSubmit={jest.fn()} />);
 describe('<Login />', () => {
   test('renders the component', () => {
-    const LoginComponent = shallow(<Login onChange={jest.fn()} onSubmit={jest.fn()} />);
     expect(LoginComponent).toMatchSnapshot();
   });
 });
 
 describe('tesing login container', () => {
+  const props = {
+    signUp: jest.fn(),
+    signupData: {
+      errors: {
+        password: ['Wrong password'],
+      },
+    },
+  };
+
   let wrapper;
   beforeEach(() => {
     store = mockStore({
